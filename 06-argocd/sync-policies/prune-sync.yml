@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prune-application
+spec:
+  destination:
+    namespace: prune-sync
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: 03-argocd/helm/nginx/templates
+    repoURL: https://github.com/Jkrishna77/argo-cd-tutorial.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
