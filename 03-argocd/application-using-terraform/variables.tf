@@ -43,10 +43,7 @@ variable "target_revision" {
   description = "Target_revision Value"
 }
 
-variable "values_files" {
-  type        = list(string)
-  description = "Values_files Value as a list"
-}
+
 
 variable "insecure" {
   type        = bool
